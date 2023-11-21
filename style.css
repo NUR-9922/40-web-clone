@@ -12,3 +12,6 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+#navbar-container {
+ /* position: absolute; */
+}

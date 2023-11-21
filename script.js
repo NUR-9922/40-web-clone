@@ -1,66 +1,24 @@
 document.addEventListener('DOMContentLoaded', function () {
-    fetch('component/nav-bar.html')
-        .then(response => response.text())      
+    loadSection('navbar-container', 'component/htmlFiles/nav-bar.html');
+    loadSection('hero-sec', 'component/htmlFiles/heroSection.html');
+    loadSection('categotySection', 'component/htmlFiles/categotySection.html');
+    loadSection('aboutPage', 'component/htmlFiles/aboutSection.html');
+    loadSection('FeaturedCourses', 'component/htmlFiles/FeaturedCourses.html');
+});
+
+function loadSection(containerId, filePath) {
+    fetch(filePath)
+        .then(response => response.text())
         .then(data => {
-            document.getElementById('navbar-container').innerHTML = data;
+            document.getElementById(containerId).innerHTML = data;
 
             // Add a slight delay before applying styles
             setTimeout(() => {
-                const scriptElement = document.querySelector('#navbar-container script');
+                const scriptElement = document.querySelector(`#${containerId} script`);
                 if (scriptElement) {
                     eval(scriptElement.innerHTML);
                 }
             }, 50); // Adjust the delay as needed
         })
-        .catch(error => console.error('Error fetching and loading navigation bar:', error));
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('component/heroSection.html')
-        .then(response => response.text())      
-        .then(data => {
-            document.getElementById('hero-sec').innerHTML = data;
-
-            // Add a slight delay before applying styles
-            setTimeout(() => {
-                const scriptElement = document.querySelector('#navbar-container script');
-                if (scriptElement) {
-                    eval(scriptElement.innerHTML);
-                }
-            }, 50); // Adjust the delay as needed
-        })
-        .catch(error => console.error('Error fetching and loading navigation bar:', error));
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('component/categotySection.html')
-        .then(response => response.text())      
-        .then(data => {
-            document.getElementById('categotySection').innerHTML = data;
-
-            // Add a slight delay before applying styles
-            setTimeout(() => {
-                const scriptElement = document.querySelector('#navbar-container script');
-                if (scriptElement) {
-                    eval(scriptElement.innerHTML);
-                }
-            }, 50); // Adjust the delay as needed
-        })
-        .catch(error => console.error('Error fetching and loading navigation bar:', error));
-});
-document.addEventListener('DOMContentLoaded', function () {
-    fetch('component/aboutSection.html')
-        .then(response => response.text())      
-        .then(data => {
-            document.getElementById('aboutPage').innerHTML = data;
-
-            // Add a slight delay before applying styles
-            setTimeout(() => {
-                const scriptElement = document.querySelector('#navbar-container script');
-                if (scriptElement) {
-                    eval(scriptElement.innerHTML);
-                }
-            }, 50); // Adjust the delay as needed
-        })
-        .catch(error => console.error('Error fetching and loading navigation bar:', error));
-});
+        .catch(error => console.error(`Error fetching and loading section ${containerId}:`, error));
+}
