@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="aboutPage">
+        <div id="aboutPageInnerBpdy">
+            <div class="left"><img src="assets/asset 9.jpeg" alt=""></div>
+            <div class="right">
+                <div id="heading">About <br> Delar University</div>
+                <div id="discription">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, deserunt distinctio? Earum,
+                    accusamus! Minima qui expedita facilis voluptatibus dolorem, quam fuga deserunt beatae possimus a
+                    eius, non fugiat eveniet ab!
+                </div>
+                <div class="signature"><img src="assets/asset 10.png" alt=""></div>
+                <button type="button" class="button">Browse More Courses <i class="ri-arrow-right-up-line"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-size: 1.4rem;
+            text-rendering: optimizeLegibility;
+        }
+
+        #aboutPage {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #aboutPageInnerBpdy {
+                width: 80%;
+                height: 70%;
+                display: flex;
+                border-radius: 5px;
+                overflow: hidden;
+                box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+                .left {
+                    width: 50%;
+                    height: 100%;
+                }
+
+                .left img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .right {
+                    width: 50%;
+                    height: 100%;
+                    padding: 50px;
+                    font-family: Arial, Helvetica, sans-serif;
+
+                    #heading {
+                        font-weight: bold;
+                        font-size: 40px;
+                        width: 350px;
+                    }
+
+                    #discription {
+                        font-size: 14px;
+                        margin-top: 20px;
+                        font-family: roboto;
+                        opacity: .8;
+                    }
+
+                    .signature img {
+                        margin-top: 30px;
+                    }
+
+                    .button {
+                        background-color: #296df4;
+                        border: none;
+                        padding: 20px 45px;
+                        margin-top: 30px;
+                        color: #fff;
+                        border-radius: 30px;
+                        font-size: 13px;
+                        font-family: Arial, Helvetica, sans-serif;
+                        cursor: pointer;
+                        transform: scale(.9);
+                        transform-origin: left;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    </style>
+</body>
+
+</html>

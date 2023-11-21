@@ -11,23 +11,333 @@
         href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,700;1,700&family=Dela+Gothic+One&family=Open+Sans&family=Poppins&display=swap"
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <style>
+        nav {
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-inline: 80px;
+            position: relative;
+
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #000 !important;
+        }
+
+        .nav-links {
+            width: auto;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 99;
+        }
+
+        .nav-links ul {
+            display: flex;
+            /* align-items: center; */
+            justify-content: center;
+            margin-right: 100px;
+            gap: 40px;
+            font-family: 'Manrope', sans-serif;
+            text-decoration: none;
+            list-style: none;
+            font-size: 13px;
+
+        }
+
+        .nav-links ul li {
+            display: flex;
+            cursor: pointer;
+            position: relative;
+
+        }
+
+        .nav-links ul li:nth-child(1) {
+            color: #296df4;
+        }
+
+        .nav-links ul li:hover {
+            color: #296df4;
+        }
+
+
+        #listBackground {
+            top: 70px;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+
+            transform-origin: top;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #ffffff;
+            transition: all .1s;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .listBackground {
+            width: 200px;
+            height: 200px;
+            top: 50px;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            z-index: 10;
+            color: #000000;
+            /* background-color: #613838; */
+            left: 0;
+
+        }
+
+        .listBackground li {
+            width: 100%;
+            margin-top: -20px;
+            font-weight: bold;
+            font-size: 10px;
+            word-spacing: 2px;
+
+            padding: 3px;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        .listBackground li:hover {
+            color: #296df4 !important;
+        }
+
+        .firstItemSubMenuParent {
+            display: flex;
+            gap: 100px;
+        }
+
+
+
+        .firstItemSubMenu {
+            width: 200px;
+            height: auto;
+            position: absolute;
+            opacity: 0;
+            visibility: hidden;
+            transition: all .1s;
+            transform-origin: top;
+            display: flex;
+            flex-direction: column;
+            background-color: #ffffff;
+            z-index: 10;
+            margin-left: 190px;
+            border-radius: 5px;
+            padding: 35px;
+        }
+
+        .firstItemSubMenu li {
+            color: #000 !important;
+        }
+
+        .seceondlistBackground {
+            margin-top: 50px;
+
+        }
+
+        .seceondlistBackground li {
+            padding-right: 20px;
+            display: flex;
+            justify-content: space-between;
+            color: #000 !important;
+        }
+
+
+        .secondItemSubMenu-1 {
+            margin-top: -8px;
+            margin-left: 195px;
+        }
+
+        .secondItemSubMenu-1-inner-menu {
+            margin-left: 165px;
+        }
+
+        .secondItemSubMenu-2 {
+            margin-left: 195px;
+        }
+
+        .secondItemSubMenu-3 {
+            margin-left: 195px;
+        }
+
+        .thirdItemSubMenuParent-1 {
+            display: flex;
+            color: #000 !important;
+            justify-content: space-between;
+
+        }
+
+        .thirdItemSubMenuParent-1 i {
+            padding-right: 10px;
+        }
+
+        .thirdItemSubMenu-1 {
+            margin-left: 199px;
+            color: #000 !important;
+        }
+
+        .thirdItemSubMenu-1 a:hover {
+            color:#296df4 !important;
+        }
+
+
+
+
+
+        #search-bar {
+            width: 300px;
+            height: 60%;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+            font-family: 'Manrope', sans-serif;
+            box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        }
+
+        #search-category {
+            width: 45%;
+            height: 100%;
+            background-color: #f3f3f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #search-category-main {
+            width: 100px;
+            border: none;
+            background-color: transparent;
+            font-size: 13px;
+            margin-left: 10px;
+            outline: none;
+            cursor: pointer;
+        }
+
+        #search-box {
+            width: 60%;
+            height: 100%;
+            background-color: #ffffff;
+            outline: none;
+            border: none;
+            text-indent: 20px;
+            font-size: 15px;
+        }
+
+        #search-icon {
+            margin-right: 15px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+    </style>
 </head>
 
 <body>
     <nav>
-        <div id="logo"><img src="assets/asset 1.png" alt=""></div>
-
+        <a href="index.html">
+            <div id="logo"><img src="assets/asset 1.png" alt=""></div>
+        </a>
         <div class="nav-links">
             <ul>
                 <li>HOME</li>
-                <li>About Us <i class="ri-arrow-down-s-line"></i></li>
-                <li>Page <i class="ri-arrow-down-s-line"></i></li>
-                <li id>Courses <i class="ri-arrow-down-s-line"></i></li>
-                <li>Blog <i class="ri-arrow-down-s-line"></i></li>
-                <li >Contact <i class="ri-arrow-down-s-line"></i></li>
+                <li id="firstItem">About Us <i class="ri-arrow-down-s-line"></i>
+                    <ul class="listBackground">
+                        <li style="color: #000000;">About Us</li>
+                        <li class="firstItemSubMenuParent">Instructors <span><i class="ri-arrow-down-s-line"></i></span>
+                            <ul class="firstItemSubMenu">
+                                <li>Instructors </li>
+                                <li>Instructor Single</li>
+                            </ul>
+                        </li>
+                        <li>Dashboard</li>
+                        <li>Our Galler</li>
+                        <li>FAQ</li>
+                    </ul>
+                </li>
+                <li id="secendItem">Pagees <i class="ri-arrow-down-s-line"></i>
+                    <ul class="listBackground seceondlistBackground">
+                        <li class="secondItemSubMenuParent-1">Events <span><i class="ri-arrow-down-s-line"></i></span>
+                            <ul class="firstItemSubMenu secondItemSubMenu-1">
+                                <li>Classic Events</li>
+                                <li>Event Grid</li>
+                                <li>Event List</li>
+                                <li class="secondItemSubMenu-1-inner-menu-parent">Event Simgle <span><i
+                                            class="ri-arrow-down-s-line"></i></span>
+                                    <ul class="firstItemSubMenu  secondItemSubMenu-1-inner-menu">
+                                        <li>Shop </li>
+                                        <li>Single Product</li>
+                                        <li>Cart</li>
+                                        <li>Checkmark</li>
+                                        <li>My account</li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li class="secondItemSubMenuParent-2">Shop <span><i class="ri-arrow-down-s-line"></i></span>
+                            <ul class="firstItemSubMenu secondItemSubMenu-2">
+                                <li>Instructors</li>
+                                <li>Instructor Single</li>
+                            </ul>
+                        </li>
+                        <li class="secondItemSubMenuParent-3"> Teacher <span><i class="ri-arrow-down-s-line"></i></span>
+                            <ul class="firstItemSubMenu secondItemSubMenu-3">
+                                <li>Teachers</li>
+                                <li>Teachers Single</li>
+                            </ul>
+                        </li>
+                        <li>Library</li>
+                        <li>Tutorials</li>
+                        <li>Profile</li>
+                        <li>Register</li>
+                        <li>Login</li>
+                    </ul>
+                </li>
+                <li id="thirdItem">Courses <i class="ri-arrow-down-s-line"></i>
+                    <ul class="listBackground thirdlistBackground">
+                        <li class="thirdItemSubMenuParent-1">Courses <span><i class="ri-arrow-down-s-line"></i></span>
+                            <ul class="firstItemSubMenu thirdItemSubMenu-1">
+                                <li><a href="">Courses Archive</a></li>
+                                <li><a href="" class="">Courses Grid</a></li>
+                                <li><a href="" class="">Courses Filter</a></li>
+                                <li><a href="" class="">Courses List</a></li>
+                            </ul>
+                        </li>
+                        <li>Course Single</li>
+                        <li>Lesson</li>
+                        <li>Our Galler</li>
+                        <li>Quizzes</li>
+                    </ul>
+                </li>
+                </li>
+                <li id="FouthItem">Blog</li>
+                <li>Contact </li>
             </ul>
+
+
+            <div id="listBackground"> </div>
         </div>
-        <div class="list-background"></div>
+
         <div id="search-bar">
             <div id="search-category">
                 <select id="search-category-main">
@@ -41,105 +351,155 @@
                     <option value="16">Business &amp; Management</option>
                 </select>
             </div>
-            <input type="text" name="" id="search-box" placeholder="Search heare">
+            <input type="text" name="" id="search-box" placeholder="Search here">
             <i class="ri-search-line" id="search-icon"></i>
         </div>
     </nav>
-    <style>
-        nav {
-            width: 100%;
-            height: 70px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-inline: 20px;
-            position: relative;
 
-            .nav-links {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            .nav-links ul {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 20px;
-                font-family: 'Manrope', sans-serif;
-                text-decoration: none;
-                list-style: none;
-                font-size: 13px;
-            }
-
-            .nav-links ul li {
-                cursor: pointer;
-
-            }
-            .nav-links ul li:nth-child(1){
-                color: ;
-            }
+    <script>
 
 
 
-            
+        document.querySelector(".nav-links").addEventListener("mouseleave", function () {
+            document.getElementById("listBackground").style.opacity = "0";
+            document.getElementById("listBackground").style.visibility = "hidden";
+            document.querySelector(".listBackground").style.opacity = "0";
+            document.querySelector(".listBackground").style.visibility = "hidden";
+            document.querySelector(".firstItemSubMenu").style.visibility = "hidden";
+            document.querySelector(".firstItemSubMenu").style.opacity = "0";
+            document.querySelector(".seceondlistBackground").style.opacity = "0";
+            document.querySelector(".seceondlistBackground").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-1").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-1").style.opacity = "0";
+            document.querySelector(".secondItemSubMenu-1-inner-menu").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-1-inner-menu").style.opacity = "0";
+            document.querySelector(".thirdItemSubMenu-1").style.visibility = "hidden";
+            document.querySelector(".thirdItemSubMenu-1").style.opacity = "0";
+
+            document.querySelector(".thirdlistBackground").style.visibility = "hidden";
+            document.querySelector(".thirdlistBackground").style.opacity = "0";
+        })
+        document.querySelector("#firstItem").addEventListener("mouseover", function () {
+            document.getElementById("listBackground").style.width = "210px";
+            document.getElementById("listBackground").style.height = "200px";
+            document.getElementById("listBackground").style.left = "60px";
+            document.getElementById("listBackground").style.opacity = "1";
+            document.getElementById("listBackground").style.visibility = "visible";
+            document.querySelector(".listBackground").style.opacity = "1";
+            document.querySelector(".listBackground").style.visibility = "visible";
+            document.querySelector(".seceondlistBackground").style.opacity = "0";
+            document.querySelector(".seceondlistBackground").style.visibility = "hidden";
+            document.querySelector(".thirdlistBackground").style.visibility = "hidden";
+            document.querySelector(".thirdlistBackground").style.opacity = "0";
+        })
+
+        document.querySelector(".firstItemSubMenuParent").addEventListener("mouseover", function () {
+            document.querySelector(".firstItemSubMenu").style.visibility = "visible";
+            document.querySelector(".firstItemSubMenu").style.opacity = "1";
+
+        })
 
 
 
-            #search-bar {
-                width: 380px;
-                height: 75%;
-
-                border-radius: 30px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                overflow: hidden;
-                font-family: 'Manrope', sans-serif;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-
-                #search-category {
-                    width: 40%;
-                    height: 100%;
-                    background-color: #f3f3f5;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    #search-category-main {
-                        width: 100px;
-                        border: none;
-                        background-color: transparent;
-                        font-size: 15px;
-                        margin-left: 10px;
-                        outline: none;
-                        cursor: pointer;
-                    }
 
 
-                }
+        document.querySelector("#secendItem").addEventListener("mouseover", function () {
+            document.getElementById("listBackground").style.width = "210px";
+            document.getElementById("listBackground").style.height = "300px";
+            document.getElementById("listBackground").style.left = "170px";
+            document.getElementById("listBackground").style.opacity = "1";
+            document.querySelector(".seceondlistBackground").style.opacity = "1";
+            document.querySelector(".seceondlistBackground").style.visibility = "visible";
 
-                #search-box {
-                    width: 60%;
-                    height: 100%;
-                    background-color: #ffffff;
-                    outline: none;
-                    border: none;
-                    text-indent: 20px;
-                    font-size: 15px;
-                }
+            document.querySelector(".firstItemSubMenu").style.visibility = "hidden";
+            document.querySelector(".firstItemSubMenu").style.opacity = "0";
 
-                #search-icon {
-                    margin-right: 15px;
-                    cursor: pointer;
-                }
-            }
+            document.querySelector(".thirdlistBackground").style.visibility = "hidden";
+            document.querySelector(".thirdlistBackground").style.opacity = "0";
+            document.getElementById("listBackground").style.visibility = "visible";
+            document.querySelector(".listBackground").style.opacity = "0";
+            document.querySelector(".listBackground").style.visibility = "hidden";
+        })
 
-        }
-    </style>
+        document.querySelector(".secondItemSubMenuParent-1").addEventListener("mouseover", function () {
+            document.querySelector(".secondItemSubMenu-1").style.visibility = "visible";
+            document.querySelector(".secondItemSubMenu-1").style.opacity = "1";
+            document.querySelector(".secondItemSubMenu-2").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-2").style.opacity = "0";
+
+        })
+
+        document.querySelector(".secondItemSubMenuParent-2").addEventListener("mouseover", function () {
+            document.querySelector(".secondItemSubMenu-2").style.visibility = "visible";
+            document.querySelector(".secondItemSubMenu-2").style.opacity = "1";
+            document.querySelector(".secondItemSubMenu-1").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-1").style.opacity = "0";
+            document.querySelector(".secondItemSubMenu-3").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-3").style.opacity = "0";
+        })
+        document.querySelector(".secondItemSubMenu-1-inner-menu-parent").addEventListener("mouseover", function () {
+            document.querySelector(".secondItemSubMenu-1-inner-menu").style.visibility = "visible";
+            document.querySelector(".secondItemSubMenu-1-inner-menu").style.opacity = "1";
+
+        });
+
+        document.querySelector(".secondItemSubMenuParent-3").addEventListener("mouseover", function () {
+            document.querySelector(".secondItemSubMenu-3").style.visibility = "visible";
+            document.querySelector(".secondItemSubMenu-3").style.opacity = "1";
+            document.querySelector(".secondItemSubMenu-1").style.visibility = "hidden";
+            document.querySelector(".secondItemSubMenu-1").style.opacity = "0";
+
+        })
 
 
+
+
+        document.querySelector("#thirdItem").addEventListener("mouseover", function () {
+            document.getElementById("listBackground").style.width = "210px";
+            document.getElementById("listBackground").style.height = "200px";
+            document.getElementById("listBackground").style.left = "270px";
+            document.getElementById("listBackground").style.opacity = "1";
+            document.getElementById("listBackground").style.visibility = "visible";
+            document.querySelector(".seceondlistBackground").style.opacity = "0";
+            document.querySelector(".seceondlistBackground").style.visibility = "hidden";
+            document.querySelector(".seceondlistBackground").style.opacity = "1";
+            document.querySelector(".seceondlistBackground").style.visibility = "visible";
+            document.querySelector(".seceondlistBackground").style.opacity = "0 ";
+            document.querySelector(".seceondlistBackground").style.visibility = "hidden";
+
+
+            document.querySelector(".thirdlistBackground").style.visibility = "visible";
+            document.querySelector(".thirdlistBackground").style.opacity = "1";
+        })
+
+
+
+        document.querySelector(".thirdItemSubMenuParent-1").addEventListener("mouseover", function () {
+            document.querySelector(".thirdItemSubMenu-1").style.visibility = "visible";
+            document.querySelector(".thirdItemSubMenu-1").style.opacity = "1";
+
+
+        })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
 </body>
 
 </html>

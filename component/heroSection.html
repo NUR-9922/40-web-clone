@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j</title>
+
+</head>
+
+<body>
+    <div id="hero-sce">
+        <div id="inner">
+            <h1 class="heading">The best University Courses for better world</h1>
+            <p class="p">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper
+                mattis, pulvinar dapibus leo. Discover More Course </p>
+            <button type="button" class="herobtn">Discover More Course <i class="ri-arrow-right-up-line"></i></button>
+
+
+
+        </div>
+        <img src="assets/asset 2.png" alt="" id="heroMeinImg">
+    </div>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            font-size: 1.4rem;
+            text-rendering: optimizeLegibility;
+            /* overflow: hidden; */
+        }
+
+        #hero-sec {
+            overflow: hidden;
+            width: 100%;
+            height: 90vh;
+            background-image: url("assets/asset 41.jpeg");
+            background-size: cover;
+            display: flex;
+            padding-left: 80px;
+            position: relative;
+            padding-top: 120px;
+
+            #inner {
+                width: 40%;
+                height: 100%;
+
+                .heading {
+                    font-size: 43px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    transform: scale(1.1);
+                    transform-origin: left;
+                }
+
+                .p {
+                    font-size: 15px;
+                    color: #94857e;
+                    margin-top: 20px;
+                    font-family: roboto;
+                    width: 110%;
+                    word-spacing: 2px;
+                    line-height: 1.5;
+                }
+
+                .herobtn {
+                    background-color: #296df4;
+                    border: none;
+                    padding: 20px 45px;
+                    margin-top: 30px;
+                    color: #fff;
+                    border-radius: 30px;
+                    font-size: 13px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    cursor: pointer;
+                    transform: scale(.9);
+                    transform-origin: left;
+                    font-weight: bold;
+                }
+            }
+
+            #heroMeinImg {
+                height: 90%;
+                position: absolute;
+                top: 60%;
+                left: 60%;
+                transform: translate(-50%, -50%) scale(1.2);
+            }
+        }
+    </style>
+    <script></script>
+</body>
+
+</html>
