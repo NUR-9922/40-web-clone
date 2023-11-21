@@ -11,7 +11,7 @@ function loadSection(containerId, filePath) {
         .then(response => response.text())
         .then(data => {
             document.getElementById(containerId).innerHTML = data;
-
+            console.log(containerId);
             // Add a slight delay before applying styles
             setTimeout(() => {
                 const scriptElement = document.querySelector(`#${containerId} script`);
