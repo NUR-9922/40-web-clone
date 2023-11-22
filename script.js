@@ -10,8 +10,8 @@ function loadSection(containerId, filePath) {
     fetch(filePath)
         .then(response => response.text())
         .then(data => {
-            document.getElementById(containerId).innerHTML = data;
-            console.log(containerId);
+            document.getElementById(containerId).innerHTML += data;
+           
             // Add a slight delay before applying styles
             setTimeout(() => {
                 const scriptElement = document.querySelector(`#${containerId} script`);
@@ -22,6 +22,56 @@ function loadSection(containerId, filePath) {
         })
         .catch(error => console.error(`Error fetching and loading section ${containerId}:`, error));
 }
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    loadPageIntoElement('box-1', 'component/htmlFiles/FeaturedCourses.html', 'box-1');
+});
+
+function loadPageIntoElement(elementId, filePath, extractElementId) {
+    fetch(filePath)
+        .then(response => response.text())
+        .then(data => {
+            const container = document.getElementById("overlayPopup");
+            const extractedElement = extractElementById(data, extractElementId);
+            container.innerHTML = extractedElement;
+
+            // Add a slight delay before applying styles
+            setTimeout(() => {
+                const scriptElement = container.querySelector(`#${elementId} script`);
+                if (scriptElement) {
+                    eval(scriptElement.innerHTML);
+                }
+            }, 50); // Adjust the delay as needed
+        })
+        .catch(error => console.error(`Error fetching and loading page into element ${elementId}:`, error));
+}
+
+
+
+function extractElementById(htmlString, elementId) {
+    const doc = new DOMParser().parseFromString(htmlString, 'text/html');
+    const extractedElement = doc.getElementById(elementId);
+
+    if (extractedElement) {
+        // Exclude the unwanted part by removing the innerHTML of the box-inner div
+        const boxInnerElement = extractedElement.querySelector('.box-inner');
+        if (boxInnerElement) {
+            boxInnerElement.innerHTML = '';
+        }
+
+        return extractedElement.outerHTML;
+    } else {
+        return '';
+    }
+}
+
 
 
 
