@@ -1,29 +1,33 @@
-document.addEventListener('DOMContentLoaded', function () {
-    loadSection('navbar-container', 'component/htmlFiles/nav-bar.html');
-    loadSection('hero-sec', 'component/htmlFiles/heroSection.html');
-    loadSection('categotySection', 'component/htmlFiles/categotySection.html');
-    loadSection('aboutPage', 'component/htmlFiles/aboutSection.html');
-    loadSection('FeaturedCourses', 'component/htmlFiles/FeaturedCourses.html');
-});
+function getConpponentFormAnatherHtmlPages() {
+    document.addEventListener('DOMContentLoaded', function () {
+        loadSection('navbar-container', 'component/htmlFiles/nav-bar.html');
+        loadSection('hero-sec', 'component/htmlFiles/heroSection.html');
+        loadSection('categotySection', 'component/htmlFiles/categotySection.html');
+        loadSection('aboutPage', 'component/htmlFiles/aboutSection.html');
+        loadSection('FeaturedCourses', 'component/htmlFiles/FeaturedCourses.html');
+        loadSection('upcomingEvent', 'component/htmlFiles/upComingEventEction.html');
+        loadSection('AcademicsPrograms', 'component/htmlFiles/AcademicsPrograms.html');
+        loadSection('CampusInformation', 'component/htmlFiles/CampusInformation.html');
+    });
 
-function loadSection(containerId, filePath) {
-    fetch(filePath)
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById(containerId).innerHTML += data;
+    function loadSection(containerId, filePath) {
+        fetch(filePath)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById(containerId).innerHTML += data;
 
-            // Add a slight delay before applying styles
-            setTimeout(() => {
-                const scriptElement = document.querySelector(`#${containerId} script`);
-                if (scriptElement) {
-                    eval(scriptElement.innerHTML);
-                }
-            }, 50); // Adjust the delay as needed
-        })
-        .catch(error => console.error(`Error fetching and loading section ${containerId}:`, error));
+                // Add a slight delay before applying styles
+                setTimeout(() => {
+                    const scriptElement = document.querySelector(`#${containerId} script`);
+                    if (scriptElement) {
+                        eval(scriptElement.innerHTML);
+                    }
+                }, 50); // Adjust the delay as needed
+            })
+            .catch(error => console.error(`Error fetching and loading section ${containerId}:`, error));
+    };
 };
-
-
+getConpponentFormAnatherHtmlPages();
 
 
 
@@ -58,21 +62,15 @@ function loadPageIntoElement(elementId, filePath, extractElementId) {
 function extractElementById(htmlString, elementId) {
     const doc = new DOMParser().parseFromString(htmlString, 'text/html');
     const extractedElement = doc.getElementById(elementId);
-
     if (extractedElement) {
         // Exclude the unwanted part by removing the innerHTML of the box-inner div
         const boxInnerElement = extractedElement.querySelector('.box-inner');
-        if (boxInnerElement) {
-            boxInnerElement.innerHTML = '';
-        }
-
+        document.getElementById("overlayPopup").innerHTML = extractedElement;
         return extractedElement.outerHTML;
-    } else {
-        return '';
-    }
-};
 
+    };
 
+}
 
 
 window.onload = function () {
@@ -83,4 +81,7 @@ window.onload = function () {
         document.querySelector(".mein").style.display = "block";
     }, 3000)
 };
+
+
+
 
