@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blog</title>
+    <link rel="stylesheet" href="component/styleShits/blog.css">
+</head>
+
+<body>
+    <div class="blogContainer">
+        <div id="row-one">
+            <h5 class="subHeading">From our blog</h5>
+            <h1 class="meinHeading">Latest from our Blogs</h1>
+        </div>
+        <div class="row-2">
+            <div class="box">
+                <div class="top"><img src="assets/asset 28.jpeg" alt=""></div>
+                <div class="bottom">
+                    <div class="date"><i class="ri-calendar-line"></i> August 24, 2023</div>
+                    <a href="">
+                        <div class="heading">Emotional Intelligence in Education Building</div>
+                    </a>
+                    <div class="row-3"><span><i class="ri-user-3-line"></i> Back Theme</span> <span><i class="ri-chat-4-line"></i> 0 Comments</span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="top"><img src="assets/asset 28.jpeg" alt=""></div>
+                <div class="bottom">
+                    <div class="date"><i class="ri-calendar-line"></i> August 24, 2023</div>
+                    <a href="">
+                        <div class="heading">Literacy in the Classroom Navigating</div>
+                    </a>
+                    <div class="row-3"><span><i class="ri-user-3-line"></i> Back Theme</span> <span><i class="ri-chat-4-line"></i> 0 Comments</span></div>
+                </div>
+            </div>
+            <div class="box">
+                <div class="top"><img src="assets/asset 28.jpeg" alt=""></div>
+                <div class="bottom">
+                    <div class="date"><i class="ri-calendar-line"></i> August 24, 2023</div>
+                    <a href="">
+                        <div class="heading">Role of Emotional Intelligence in</div>
+                    </a>
+                    <div class="row-3"><span><i class="ri-user-3-line"></i> Back Theme</span> <span><i class="ri-chat-4-line"></i> 0 Comments</span></div>
+                </div>
+            </div>
+        </div>
+        <div class="button">
+            Browse More Blog &nbsp;<i class="ri-arrow-right-up-line"></i>
+        </div>
+    </div>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+}
+
+html,
+body a {
+    text-decoration: none;
+}
+
+.blogContainer {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    #row-one {
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .subHeading {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #296df4;
+        }
+
+        .meinHeading {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-top: 10px;
+            font-size: 40px;
+        }
+    }
+
+    .row-2 {
+        width: 100%;
+        height: 50vh;
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+
+        .box {
+            width: 300px;
+            height: 350px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            overflow: hidden;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+            .top {
+                width: 100%;
+                height: 50%;
+
+            }
+
+            .top img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+
+            }
+
+            .bottom {
+                width: 100%;
+                height: 50%;
+                padding: 30px;
+
+                .date {
+                    font-size: 12px;
+                    font-family: roboto;
+                    font-weight: 100;
+
+                }
+
+                .heading {
+                    font-size: 20px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-weight: bold;
+                    text-decoration: none;
+                    margin-top: 20px;
+                    color: #141010;
+                    transition: all .4s linear;
+                }
+
+                .heading:hover {
+                    color: #296df4;
+                }
+
+                .row-3 {
+                    width: 100%;
+                    height: 20px;
+                    font-size: 13px;
+                    margin-top: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    color: #705a5c;
+                    font-family: Arial, Helvetica, sans-serif;
+                }
+            }
+        }
+    }
+
+    .button {
+        padding: 15px 30px;
+        border: 1px solid #296df4;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        border-radius: 50px;
+        -webkit-border-radius: 50px;
+        -moz-border-radius: 50px;
+        -ms-border-radius: 50px;
+        -o-border-radius: 50px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        cursor: pointer;
+        transition: all .4s linear;
+        font-weight: bold;
+    }
+
+    .button:hover {
+        background-color: #296df4;
+        color: #fff;
+    }
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html , body{
+    height: 100%;
+    width: 100%;
+ font-size: 1.4rem;
+ text-rendering: optimizeLegibility;
+text-decoration: none;
+}
+html , body a{
+text-decoration: none;
+}
+</style>
+</body>
+</html>

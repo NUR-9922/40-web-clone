@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fotter</title>
+    <link rel="stylesheet" href="component/styleShits/fotter.css">
+</head>
+
+<body>
+    <footer>
+        <div class="top">
+            <div class="backgroundImage"><img src="assets/asset 43.jpeg" alt=""></div>
+            <div class="heading">Newsletter to <br> get <br> in touch</div>
+            <div class="left">
+                <input type="text" name="" id="footerEmail" placeholder="Your Email Address">
+                <button class="emailBtn">Subscribe</button>
+            </div>
+
+        </div>
+        <div class="bottom">
+            <div class="part-1">
+                <div class="logo"><img src="assets/asset 1.png" alt=""></div>
+                <div class="discription">Welcome to the world of education, Where knowledge unlocks endless possibilities! societies.</div>
+                <div class="follow">Follow us</div>
+                <div class="solcal-icon">
+                    <i class="ri-facebook-line"></i>
+                    <i class="ri-twitter-x-line"></i>
+                    <i class="ri-behance-line"></i>
+                    <i class="ri-youtube-fill"></i>
+                    <i class="ri-instagram-line"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-size: 1.4rem;
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+}
+
+html,
+body a {
+    text-decoration: none;
+    color: black;
+}
+
+footer {
+    width: 100%;
+    min-height: 100vh;
+
+    .top {
+        width: 100%;
+        height: 70%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-inline: 100px;
+        .backgroundImage {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .backgroundImage img {
+            width: 100%;
+            height: 100%;
+
+
+        }
+
+        .heading {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            color: #fff
+        }
+
+
+        .left {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #footerEmail {
+            text-indent: 15px;
+            width: 300px;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            outline: none;
+            border: none;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+
+        .emailBtn {
+            padding: 15px 30px;
+            height: 50px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            -ms-border-radius: 10px;
+            -o-border-radius: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all .4s linear;
+            font-weight: bold;
+            border: none;
+            color: #fff;
+            border-top-left-radius: 0px;
+            border-bottom-left-radius: 0px;
+
+        }
+
+        .emailBtn:hover {
+            background-color: #296df4;
+            color: #fff;
+        }
+    }
+
+    .bottom {
+        width: 100%;
+        min-height: 50%;
+        display: flex;
+        align-items: center;
+        padding: 100px;
+
+        .part-1 {
+            width: 250px;
+        }
+
+        .logo img {
+            width: 100px;
+        }
+
+        .discription {
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.5;
+            font-weight: 100;
+            color: #705a5c;
+        }
+
+        .follow {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            margin-top: 5 0px;
+        }
+
+        .solcal-icon {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+            width: 100%;
+             width:100%;
+            
+        }
+        .solcal-icon i{
+            border: 1px solid #705a5c;
+            padding: 10px;
+        }
+    }
+};
+    </style>
+</body>
+
+</html>

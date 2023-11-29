@@ -8,6 +8,8 @@ function getConpponentFormAnatherHtmlPages() {
         loadSection('upcomingEvent', 'component/htmlFiles/upComingEventEction.html');
         loadSection('AcademicsPrograms', 'component/htmlFiles/AcademicsPrograms.html');
         loadSection('CampusInformation', 'component/htmlFiles/CampusInformation.html');
+        loadSection('blog', 'component/htmlFiles/blog.html');
+        loadSection('footer', 'component/htmlFiles/footer.html');
     });
 
     function loadSection(containerId, filePath) {

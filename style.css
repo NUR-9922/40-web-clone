@@ -10,13 +10,16 @@ body {
     width: 100%;
     font-size: 1.4rem;
     text-rendering: optimizeLegibility;
+   
 }
 
 #navbar-container {
     /* position: absolute; */
 }
 
-
+.mein{
+    overflow: hidden;
+}
 .loading-screen {
     overflow: hidden;
     width: 100%;
